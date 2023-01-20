@@ -74,7 +74,7 @@ class Game:
         Method called when one game of Mastermind ends.
         At the moment it displays state of the game when it ended in the clear window of the terminal
         """
-        display(self.decryptingPlayer().prevGuess, self.rules()["keyLength"], self.rules()["numberOfRounds"])
+        display(self.decryptingPlayer().prevGuess, self.rules()["keyLength"], self.rules()["numberOfTurns"])
         del self.decryptingPlayer().prevGuess
         self.decryptingPlayer().prevGuess = []
         if self.decryptingPlayer().name() == "AI":

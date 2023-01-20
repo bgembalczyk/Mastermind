@@ -37,15 +37,15 @@ class Mastermind:
                 print("Incorrect input, number not in range. Try again.")
         while True:
             try:
-                self._rules["numberOfRounds"] = int(input("Enter number of rounds in a game: [1-15] "))
-                if not 1 < self.rules()["numberOfRounds"] < 15:
+                self._rules["numberOfTurns"] = int(input("Enter number of turns in a game: [1-15] "))
+                if not 1 < self.rules()["numberOfTurns"] < 15:
                     raise InvalidInput
                 else:
                     break
             except ValueError:
                 print("Incorrect input, not a number. Try again.")
             except InvalidRangeInput:
-                print("Incorrect input, it has to be at least one round. Try again.")
+                print("Incorrect input, it has to be at least one turn. Try again.")
         while True:
             try:
                 self._rules["keyLength"] = int(input("Enter key length: [2-6] "))
@@ -123,7 +123,7 @@ class Mastermind:
         else:
             self.game = Game(self.players[1], self.players[0], self.rules())
         self.game.start()
-        for i in range(self.rules()["numberOfRounds"]):
+        for i in range(self.rules()["numberOfTurns"]):
             playerGuess = self.game.decryptingPlayer().guess()
             displayBoard(self.game.decryptingPlayer().prevGuess)
             print(displayGuess(playerGuess))
