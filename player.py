@@ -67,7 +67,9 @@ class Player:
                 print("This is not a valid key. Try again.")
         key = str(key).zfill(self.rules()["keyLength"])
         print(displayGuess(key))
-        print("\n")
+        tmpInput = input("Press enter to clear screen and start guessing")
+        if tmpInput or tmpInput == "":
+            print(chr(27) + "[2J")
         return key
 
     def guess(self) -> str:
