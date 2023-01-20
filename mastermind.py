@@ -87,6 +87,7 @@ class Mastermind:
         After initialization this is a proper method starting the round of Mastermind.
         It inputs the players names and checks if they're correct.
         """
+        self.inputRules()
         self.players = []
         for playerNum in range(self.rules()["numberOfPlayers"]):
             while True:
