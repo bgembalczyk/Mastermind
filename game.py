@@ -1,6 +1,6 @@
 from auxiliaries import *
 from exceptions import *
-from output import display
+from output import display, displayGuess
 from player import Player
 
 class Game:
@@ -29,6 +29,8 @@ class Game:
     def start(self) -> None:
         self.insertKey()
         self.decryptingPlayer().prevGuess = []
+        print(displayGuess("01234567"))
+        print("Above is displayed coded guess 01234567")
         return
 
     def turn(self, guess) -> tuple:
